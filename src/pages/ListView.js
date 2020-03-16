@@ -5,8 +5,8 @@ import { Routes } from '@/constants';
 
 const ListView = () => (
   <div>
-    <h1>Detail view</h1>
-    <Link to={Routes.DetailView}>Go to Detail view</Link>
+    <h1>List View Page</h1>
+    <Link to={Routes.DetailView}>Go to Detail view page</Link>
   </div>
 );
 

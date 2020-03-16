@@ -4,8 +4,8 @@ import { Routes } from '../constants';
 
 const DetailView = () => (
   <div>
-    <h1>Detail view</h1>
-    <Link to={Routes.Intro}>Go to Intro</Link>
+    <h1>Detail View Page</h1>
+    <Link to={Routes.Intro}>Go to Intro page</Link>
   </div>
 );
 

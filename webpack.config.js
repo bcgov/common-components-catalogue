@@ -42,6 +42,7 @@ const prodConfig = {
     }),
     new webpack.EnvironmentPlugin({ API_URL: 'http://localhost:5000/api' }),
   ],
+  performance: { hints: false }
 };
 const devConfig = {
   ...prodConfig,

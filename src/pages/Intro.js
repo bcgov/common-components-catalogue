@@ -2,12 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Routes } from '@/constants';
+import Container from 'react-bootstrap/Container';
+
 
 const Intro = () => (
-  <div className="intro">
-    <h1 className="intro__title">Intro Page</h1>
-    <Link to={Routes.ListView}>Go to List page</Link>
-  </div>
+  <Container fluid>
+    <div className="intro">
+      <h1 className="intro__title">Intro Page</h1>
+      <Link to={Routes.ListView}>Go to List page</Link>
+    </div>
+  </Container>
 );
 
 export default Intro;

@@ -7,8 +7,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HOST = process.env.HOST || '0.0.0.0';
 const PORT = process.env.PORT || 3000;
 
-/** rules for dev / prod */
-const getRules = (isDevelopment) => [
+// Loaders
+const getLoaders = () => [
   {
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
@@ -17,13 +17,13 @@ const getRules = (isDevelopment) => [
   {
     test: /\.s[ac]ss$/i,
     use: [
-      'style-loader', 
-      'css-loader', 
-      'sass-loader'
+      'style-loader',
+      'css-loader',
+      'sass-loader',
     ],
   },
   {
-    test: /\.css$/i, 
+    test: /\.css$/i,
     use: [
       MiniCssExtractPlugin.loader,
     ],
@@ -34,7 +34,7 @@ const getRules = (isDevelopment) => [
   },
 ];
 
-/** plugins for dev / prod */
+// Plugins
 const getPlugins = (isDevelopment) => [
   new CleanWebpackPlugin(),
   new HtmlWebpackPlugin({
@@ -48,7 +48,7 @@ const getPlugins = (isDevelopment) => [
   }),
 ];
 
-/** base configuration */
+// Inherited base configuration
 const config = {
   entry: './src/index.js',
   resolve: {
@@ -69,10 +69,10 @@ const prodConfig = {
   name: 'prod',
   mode: 'production',
   module: {
-    rules: getRules(false),
+    rules: getLoaders(),
   },
   plugins: getPlugins(false),
-  performance: { hints: false }
+  performance: { hints: false },
 };
 
 const devConfig = {
@@ -80,7 +80,7 @@ const devConfig = {
   name: 'dev',
   mode: 'development',
   module: {
-    rules: getRules(true),
+    rules: getLoaders(),
   },
   plugins: getPlugins(true),
   devServer: {

@@ -1,9 +1,16 @@
+// Tools
 @import "./tools/variables";
 @import './tools/fonts';
+@import './tools/mixins';
 
-/** Import bootstrap */
+// Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+// Layouts
+@import './layouts/containers/page';
 
-@import './tools/mixins';
+// Pages
 @import './pages/intro';
+
+// Components
+@import './components/reusable/header';

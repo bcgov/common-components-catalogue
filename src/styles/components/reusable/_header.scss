@@ -1,0 +1,17 @@
+.header {
+  $padding: ($header-height - $logo-height) / 2;
+  background-color: theme-color('primary');
+  padding-top: $padding;
+  padding-bottom: $padding;
+  border-bottom: 2px solid theme-color('secondary');
+  &__logo {
+    img {
+      width: $logo-height * (165 / 41); // Maintain aspect ratio
+      height: $logo-height;
+    }
+  }
+  &__nav-item {
+    line-height: $logo-height;
+    color: white;
+  }
+}

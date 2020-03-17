@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Routes } from '@/constants';
-import Page from '@/layouts/containers/Page';
+import Page from '@/layouts/Page';
 
 const Intro = () => (
   <Page>

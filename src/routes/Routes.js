@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { Routes } from '@/constants';
-
 import Intro from '@/pages/Intro';
 import ListView from '@/pages/ListView';
 import DetailView from '@/pages/DetailView';

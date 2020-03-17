@@ -2,17 +2,17 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import Header from '@/components/reusable/Header';
+import Header from '@/components/Header';
 
-const Intro = (props) => (
-  <Container fluid>
+const Page = ({ children }) => (
+  <Container className="page" fluid>
     <Row>
       <Header/>
     </Row>
     <Row className="page__content">
-      {props.children}
+      {children}
     </Row>
   </Container>
 );
 
-export default Intro;
+export default Page;

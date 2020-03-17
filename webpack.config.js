@@ -2,27 +2,60 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const HOST = process.env.HOST || '0.0.0.0';
 const PORT = process.env.PORT || 3000;
 
-const prodConfig = {
-  name: 'prod',
+/** rules for dev / prod */
+const getRules = ( isDevelopment ) => {
+  return [
+    {
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use: ['babel-loader'],
+    },
+    {
+      test: /\.s[ac]ss$/i,
+      use: [
+        MiniCssExtractPlugin.loader,
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            sourceMap: isDevelopment
+          }
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: isDevelopment
+          }
+        }
+      ],
+    },
+  ];
+}
+
+/** plugins for dev / prod */
+const getPlugins = ( isDevelopment ) => {
+  return [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Common Components Catalogue',
+      template: './src/index.html',
+    }),
+    new webpack.EnvironmentPlugin({ API_URL: 'http://localhost:5000/api' }),
+    new MiniCssExtractPlugin({
+      filename: isDevelopment ? '[name].css' : '[name].[hash].css',
+      chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
+    })
+  ]
+}
+
+/** base configuration */
+const config = {
   entry: './src/index.js',
-  mode: 'production',
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-    ],
-  },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
@@ -34,20 +67,26 @@ const prodConfig = {
     publicPath: './',
     filename: 'bundle.js',
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'Basic React App',
-      template: './src/index.html',
-    }),
-    new webpack.EnvironmentPlugin({ API_URL: 'http://localhost:5000/api' }),
-  ],
-  performance: { hints: false }
+}
+
+const prodConfig = {
+  ...config,
+  name: 'prod',
+  mode: 'production',
+  module: { 
+    rules: getRules(false)
+  },
+  plugins: getPlugins(false),
 };
+
 const devConfig = {
-  ...prodConfig,
+  ...config,
   name: 'dev',
   mode: 'development',
+  module: { 
+    rules: getRules(true)
+  },
+  plugins: getPlugins(true),
   devServer: {
     contentBase: './dist',
     hot: true,

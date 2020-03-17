@@ -16,17 +16,11 @@ const getLoaders = () => [
   },
   {
     test: /\.s[ac]ss$/i,
-    use: [
-      'style-loader',
-      'css-loader',
-      'sass-loader',
-    ],
+    use: ['style-loader', 'css-loader', 'sass-loader'],
   },
   {
     test: /\.css$/i,
-    use: [
-      MiniCssExtractPlugin.loader,
-    ],
+    use: [MiniCssExtractPlugin.loader],
   },
   {
     test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,

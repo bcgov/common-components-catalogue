@@ -17,26 +17,17 @@ const getRules = (isDevelopment) => [
   {
     test: /\.s[ac]ss$/i,
     use: [
-      MiniCssExtractPlugin.loader,
-      {
-        loader: 'css-loader',
-        options: {
-          modules: true,
-          sourceMap: isDevelopment,
-        },
-      },
-      {
-        loader: 'sass-loader',
-        options: {
-          sourceMap: isDevelopment,
-        },
-      },
+      'style-loader', 
+      'css-loader', 
+      'sass-loader'
     ],
   },
-  // {
-  //   test: /\.s[ac]ss$/i,
-  //   use: ['style-loader', 'css-loader', 'sass-loader'],
-  // },
+  {
+    test: /\.css$/i, 
+    use: [
+      MiniCssExtractPlugin.loader,
+    ],
+  },
   {
     test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
     loader: 'url-loader?limit=100000',
@@ -81,6 +72,7 @@ const prodConfig = {
     rules: getRules(false),
   },
   plugins: getPlugins(false),
+  performance: { hints: false }
 };
 
 const devConfig = {

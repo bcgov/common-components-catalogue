@@ -1,16 +1,16 @@
 // Tools
-@import "./tools/variables";
+@import './tools/variables';
 @import './tools/fonts';
 @import './tools/mixins';
 
-// Bootstrap
-@import "~bootstrap/scss/bootstrap";
+// Node Modules
+@import '~bootstrap/scss/bootstrap';
 
 // Layouts
-@import './layouts/containers/page';
+@import './layouts/page';
 
 // Pages
 @import './pages/intro';
 
 // Components
-@import './components/reusable/header';
+@import './components/header';

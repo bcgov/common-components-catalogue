@@ -8,50 +8,50 @@ const HOST = process.env.HOST || '0.0.0.0';
 const PORT = process.env.PORT || 3000;
 
 /** rules for dev / prod */
-const getRules = ( isDevelopment ) => {
-  return [
-    {
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      use: ['babel-loader'],
-    },
-    {
-      test: /\.s[ac]ss$/i,
-      use: [
-        MiniCssExtractPlugin.loader,
-        {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            sourceMap: isDevelopment
-          }
+const getRules = (isDevelopment) => [
+  {
+    test: /\.(js|jsx)$/,
+    exclude: /node_modules/,
+    use: ['babel-loader'],
+  },
+  {
+    test: /\.s[ac]ss$/i,
+    use: [
+      MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          sourceMap: isDevelopment,
         },
-        {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: isDevelopment
-          }
-        }
-      ],
-    },
-  ];
-}
+      },
+      {
+        loader: 'sass-loader',
+        options: {
+          sourceMap: isDevelopment,
+        },
+      },
+    ],
+  },
+  {
+    test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+    loader: 'url-loader?limit=100000',
+  },
+];
 
 /** plugins for dev / prod */
-const getPlugins = ( isDevelopment ) => {
-  return [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'Common Components Catalogue',
-      template: './src/index.html',
-    }),
-    new webpack.EnvironmentPlugin({ API_URL: 'http://localhost:5000/api' }),
-    new MiniCssExtractPlugin({
-      filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-      chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
-    })
-  ]
-}
+const getPlugins = (isDevelopment) => [
+  new CleanWebpackPlugin(),
+  new HtmlWebpackPlugin({
+    title: 'Common Components Catalogue',
+    template: './src/index.html',
+  }),
+  new webpack.EnvironmentPlugin({ API_URL: 'http://localhost:5000/api' }),
+  new MiniCssExtractPlugin({
+    filename: isDevelopment ? '[name].css' : '[name].[hash].css',
+    chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
+  }),
+];
 
 /** base configuration */
 const config = {
@@ -67,14 +67,14 @@ const config = {
     publicPath: './',
     filename: 'bundle.js',
   },
-}
+};
 
 const prodConfig = {
   ...config,
   name: 'prod',
   mode: 'production',
-  module: { 
-    rules: getRules(false)
+  module: {
+    rules: getRules(false),
   },
   plugins: getPlugins(false),
 };
@@ -83,8 +83,8 @@ const devConfig = {
   ...config,
   name: 'dev',
   mode: 'development',
-  module: { 
-    rules: getRules(true)
+  module: {
+    rules: getRules(true),
   },
   plugins: getPlugins(true),
   devServer: {

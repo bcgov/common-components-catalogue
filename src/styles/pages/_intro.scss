@@ -1,8 +1,7 @@
 .intro {
   &__hero {
+    height: 300px;
     background-size: cover;
-  }
-  &__title {
-    color: #fff;
+    background-position: center; 
   }
 }

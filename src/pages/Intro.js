@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import Page from '@/layouts/Page';
-import PlaceholderImage from '@/assets/placeholder.svg';
+import PlaceholderImage from '@/assets/lightspeed-short.jpg';
 
 const heroStyle = {
   backgroundImage: `url(${PlaceholderImage})`
@@ -11,9 +11,7 @@ const heroStyle = {
 
 const Intro = () => (
   <Page>
-    <div className="intro__hero p-5 mb-5" style={heroStyle}>
-      <h1 className="intro__title text-center">Welcome</h1>
-    </div>
+    <div className="intro__hero mb-5" style={heroStyle}></div>
     <div>
       <h2>Purpose</h2>
       <p>

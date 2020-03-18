@@ -1,6 +1,8 @@
 .intro {
-
+  &__hero {
+    background-size: cover;
+  }
   &__title {
-    color: theme-color('primary');
+    color: white;
   }
 }

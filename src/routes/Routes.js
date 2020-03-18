@@ -11,7 +11,7 @@ export default () => (
   <Switch>
     <Route exact path={Routes.Intro} component={Intro} />
     <Route exact path={Routes.ListView} component={ListView} />
-    <Route exact path={Routes.DetailView} component={DetailView} />
+    <Route exact path={Routes.DetailView.staticRoute} component={DetailView} />
     <Route component={NotFound} />
   </Switch>
 );

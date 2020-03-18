@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Badge from 'react-bootstrap/Badge';
+import { useHistory } from 'react-router-dom';
 
 import getTag from '@/service/get-tag';
 

@@ -2,12 +2,19 @@ import React, { Fragment } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
+import { useParams } from 'react-router-dom';
 
+import example from '@/service/example.json';
 import Page from '@/layouts/Page';
 import PaneContainer from '@/layouts/PaneContainer';
 import PlaceholderImage from '@/assets/placeholder.svg';
 
 const DetailView = () => {
+  const { id } = useParams();
+
+  const matchingCoCo = example.catalogue.commonComponents.find((item) => item.id === id);
+  console.log(matchingCoCo)
+
   const renderMainContent = (
     <Fragment>
       <Row>

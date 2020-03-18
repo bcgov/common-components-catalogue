@@ -23,6 +23,7 @@ const ListItem = () => (
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 						</Col>
 					</Row>
+          
 					<Row className="mb-2">
 						<Col sm={3} lg={2}>
 							<strong>Long Description:</strong> 

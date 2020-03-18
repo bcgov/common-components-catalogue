@@ -32,7 +32,7 @@ const getLoaders = () => [
 const getPlugins = (isDevelopment) => [
   new CleanWebpackPlugin(),
   new HtmlWebpackPlugin({
-    // title: 'Common Components Catalogue',
+    title: 'Common Components Catalogue',
     template: path.join(__dirname, 'public', 'index.html'),
   }),
   new webpack.EnvironmentPlugin({ API_URL: 'http://localhost:5000/api' }),

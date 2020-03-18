@@ -1,0 +1,16 @@
+[
+  {
+    "id": 333,
+    "teamName": "Team CoCo",
+    "contactEmail": "rachit@freshworks.io",
+    "location": "CSI Lab 3rd floor",
+    "organizationalUnit": "Ministry of Citizen Services, BCDevExchange"
+  },
+  {
+    "id": 334,
+    "teamName": "Team New Thing",
+    "contactEmail": "newthingteamlead@gov.bc.ca",
+    "location": "3456 Jutland",
+    "organizationalUnit": "Ministry of Making New Stuff, IM/IT Division"
+  }
+]

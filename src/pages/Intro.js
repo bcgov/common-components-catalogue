@@ -11,10 +11,10 @@ const heroStyle = {
 
 const Intro = () => (
   <Page>
-    <Row className="intro__hero p-5 mb-5" style={heroStyle}>
+    <div className="intro__hero p-5 mb-5" style={heroStyle}>
       <h1 className="intro__title text-center">Welcome</h1>
-    </Row>
-    <Row>
+    </div>
+    <div>
       <h2>Purpose</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -24,7 +24,7 @@ const Intro = () => (
         sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
         est laborum.
       </p>
-    </Row>
+    </div>
     <Row>
       <Col sm>
         <h2>Features</h2>
@@ -43,7 +43,7 @@ const Intro = () => (
         </p>
       </Col>
     </Row>
-    <Row>
+    <div>
       <h2>Contributing</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -53,7 +53,7 @@ const Intro = () => (
         sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
         est laborum.
       </p>
-    </Row>
+    </div>
   </Page>
 );
 

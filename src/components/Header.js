@@ -10,7 +10,7 @@ const Header = () => (
   <Container fluid className="header px-1">
     <Nav>
       <Nav.Item>
-        <Nav.Link className="header__nav-item" className="header__logo" alt="Logo" as={Link} to={Routes.Intro}><img src={Logo}/></Nav.Link>
+        <Nav.Link className="header__nav-item header__logo" alt="Logo" as={Link} to={Routes.Intro}><img src={Logo}/></Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link className="header__nav-item" as={Link} to={Routes.Intro}>Common Components Catalogue</Nav.Link>

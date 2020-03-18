@@ -1,10 +1,9 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 
-
 import Header from '@/components/Header';
 
-const Page = ({children}) => (
+const Page = ({ children }) => (
   <React.Fragment>
     <Header/>
     <Container>

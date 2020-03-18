@@ -16,7 +16,7 @@ const Header = () => (
         <Nav.Link className="header__nav-item" as={Link} to={Routes.Intro}>Common Components Catalogue</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="header__nav-item" as={Link} to={Routes.ListView}>List View</Nav.Link>
+        <Nav.Link className="header__nav-item" as={Link} to={Routes.ListView}>Components</Nav.Link>
       </Nav.Item>
     </Nav>
   </Container>

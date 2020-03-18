@@ -16,14 +16,17 @@
     ],
     "keyStats": [
       {
+        "id": 122323,
         "name": "repositoryNumStars",
         "value": "3"
       },
       {
+        "id": 23232,
         "name": "repositoryOpenIssues",
         "value": "12"
       },
       {
+        "id": 33232,
         "name": "license",
         "value": "Apache 2.0"
       }

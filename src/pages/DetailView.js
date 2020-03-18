@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,8 +6,8 @@ import Image from 'react-bootstrap/Image';
 import Badge from 'react-bootstrap/Badge';
 import { useParams } from 'react-router-dom';
 
-import ComponentsJson from '@/service/data/components.json';
-import TagsJson from '@/service/data/tags.json';
+import componentsJson from '@/service/data/components.json';
+import tagsJson from '@/service/data/tags.json';
 import Page from '@/layouts/Page';
 import PaneContainer from '@/layouts/PaneContainer';
 import PlaceholderImage from '@/assets/placeholder.svg';
@@ -15,7 +15,7 @@ import PlaceholderImage from '@/assets/placeholder.svg';
 const DetailView = () => {
   const { id } = useParams();
 
-  const matchingCoCo = ComponentsJson.find((item) => item.id === parseInt(id));
+  const matchingCoCo = componentsJson.find((item) => item.id === parseInt(id));
   const name = matchingCoCo.name || 'N/A';
   const abbreviation = matchingCoCo.abbreviation || 'N/A';
   const gitHubLink = matchingCoCo.gitHubLink || null;
@@ -23,7 +23,7 @@ const DetailView = () => {
   const sampleImplementationLink = matchingCoCo.sampleImplementationLink || null;
   const shortDescription = matchingCoCo.shortDescription || 'N/A';
   const longDescription = matchingCoCo.longDescription || 'N/A';
-  const tags = TagsJson.filter((item) => matchingCoCo.tags.includes(item.id)) || [];
+  const tags = tagsJson.filter((item) => matchingCoCo.tags.includes(item.id)) || [];
   const keyStats = matchingCoCo.keyStats || [];
   const testimonials = matchingCoCo.testimonials || [];
 
@@ -69,12 +69,12 @@ const DetailView = () => {
   );
 
   const renderSideContent = (
-    <div>
+    <Fragment>
       <h4 className="mb-4">Key stats:</h4>
       {keyStats.map((item) => (
         <p key={item.name}>{item.name}: {item.value}</p>
       ))}
-    </div>
+    </Fragment>
   );
 
   return (

@@ -6,8 +6,7 @@ import Badge from 'react-bootstrap/Badge';
 
 import getTag from '@/service/get-tag';
 
-const ListItem = ({component}) => {
-  
+const ListItem = ({ component }) => {
   const keyStats = component.keyStats.map((stat) => (
     <Col sm={4} key={stat.id} >{stat.name}: {stat.value}</Col>
   ));

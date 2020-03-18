@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Badge from 'react-bootstrap/Badge';
 
 const ListItem = () => (
-	<Card className="mb-3">
+<Card className="mb-3">
 		<Card.Header as="h5">
 			Sample Component
 		<div className="float-right">

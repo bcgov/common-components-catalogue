@@ -7,7 +7,7 @@ import Page from '@/layouts/Page';
 const Intro = () => (
   <Page>
     <div className="intro">
-      <h1 className="intro__title">Welcome</h1>
+      <h1 className="intro__title text-center">Welcome</h1>
       <h2>Purpose</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt

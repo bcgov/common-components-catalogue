@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "value": "Python",
+    "description": "API is built with Python"
+  },
+  {
+    "id": 2,
+    "value": "React",
+    "description": "SPA is built with React"
+  },
+  {
+    "id": 3,
+    "value": "PostgreSQL",
+    "description": "Uses a PostgreSQL database"
+  }
+]

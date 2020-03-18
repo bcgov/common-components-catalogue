@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { Routes } from '@/constants';
+import Page from '@/layouts/Page';
+import ListItem from '@/components/ListItem';
 
 const ListView = () => (
-  <div>
-    <h1>List View Page</h1>
-    <Link to={Routes.DetailView}>Go to Detail view page</Link>
-  </div>
+  <Page>
+    <h1 className="mb-5">List of Common Components</h1>
+    <div>
+      <ListItem />
+      <ListItem />
+    </div>
+  </Page>
 );
 
 export default ListView;

@@ -6,8 +6,8 @@ import Col from 'react-bootstrap/Col';
 const PaneContainer = ({ mainContent, sideContent }) => (
   <Container fluid>
     <Row>
-      <Col xs={8}>{mainContent}</Col>
-      <Col xs={4}>{sideContent}</Col>
+      <Col sm={8}>{mainContent}</Col>
+      <Col sm={4}>{sideContent}</Col>
     </Row>
   </Container>
 );

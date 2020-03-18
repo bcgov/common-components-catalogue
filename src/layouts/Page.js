@@ -1,18 +1,17 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 
 import Header from '@/components/Header';
 
 const Page = ({ children }) => (
-  <Container className="page" fluid>
-    <Row>
-      <Header/>
-    </Row>
-    <Row className="page__content">
-      {children}
-    </Row>
-  </Container>
+  <React.Fragment>
+    <Header/>
+    <Container>
+      <div className="page__content text-left mb-2 mt-2">
+        {children}
+      </div>
+    </Container>
+  </React.Fragment>
 );
 
 export default Page;

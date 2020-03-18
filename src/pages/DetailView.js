@@ -1,10 +1,13 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
+import Badge from 'react-bootstrap/Badge';
 import { useParams } from 'react-router-dom';
 
-import example from '@/service/example.json';
+import ComponentsJson from '@/service/data/components.json';
+import TagsJson from '@/service/data/tags.json';
 import Page from '@/layouts/Page';
 import PaneContainer from '@/layouts/PaneContainer';
 import PlaceholderImage from '@/assets/placeholder.svg';
@@ -12,82 +15,66 @@ import PlaceholderImage from '@/assets/placeholder.svg';
 const DetailView = () => {
   const { id } = useParams();
 
-  const matchingCoCo = example.catalogue.commonComponents.find((item) => item.id === id);
-  console.log(matchingCoCo)
+  const matchingCoCo = ComponentsJson.find((item) => item.id === parseInt(id));
+  const name = matchingCoCo.name || 'N/A';
+  const abbreviation = matchingCoCo.abbreviation || 'N/A';
+  const gitHubLink = matchingCoCo.gitHubLink || null;
+  const supportAgreement = matchingCoCo.supportAgreement || null;
+  const sampleImplementationLink = matchingCoCo.sampleImplementationLink || null;
+  const shortDescription = matchingCoCo.shortDescription || 'N/A';
+  const longDescription = matchingCoCo.longDescription || 'N/A';
+  const tags = TagsJson.filter((item) => matchingCoCo.tags.includes(item.id)) || [];
+  const keyStats = matchingCoCo.keyStats || [];
+  const testimonials = matchingCoCo.testimonials || [];
 
   const renderMainContent = (
-    <Fragment>
+    <Container fluid>
       <Row>
         <Col xs="auto">
           <Image src={PlaceholderImage} rounded />
         </Col>
         <Col>
-          <h1>Component Name</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum.
-          </p>
+          <h1>{name} ({abbreviation})</h1>
+          <p>GitHub Link: <a href={gitHubLink} rel="noopener noreferrer" target="_blank">{gitHubLink}</a></p>
+          <p>Support Agreement: <a href={supportAgreement} rel="noopener noreferrer" target="_blank">{supportAgreement || 'N/A'}</a></p>
+          <p>Sample Implementation Link: <a href={sampleImplementationLink} rel="noopener noreferrer" target="_blank">{sampleImplementationLink || 'N/A'}</a></p>
+          {tags.map((item) => (
+            <Badge key={item.id} className="ml-1 mr-1" variant="dark">
+              {item.value} - {item.description}
+            </Badge>
+          ))}
         </Col>
       </Row>
-      <Row>
+      <Row className="mt-3 mb-3">
         <Col xs={12}>
           <h1>Description</h1>
         </Col>
         <Col xs={12}>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum.
-          </p>
+          <p>{shortDescription}</p>
+          <p>{longDescription}</p>
         </Col>
       </Row>
-      <Row>
+      <Row className="mt-3 mb-3">
         <Col xs={12}>
           <h1>Testimonials</h1>
         </Col>
-        <Col xs>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum.
-          </p>
-        </Col>
-        <Col xs>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum.
-          </p>
-        </Col>
-        <Col xs>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum.
-          </p>
-        </Col>
+        {testimonials.map((item, index) => (
+          <Col key={index} xs>
+            <p>&quot;{item.quotation}&quot;</p>
+            <p>Hours saved: {item.hoursSaved}</p>
+          </Col>
+        ))}
       </Row>
-    </Fragment>
+    </Container>
   );
 
   const renderSideContent = (
-    <div>Side bar stats</div>
+    <div>
+      <h4 className="mb-4">Key stats:</h4>
+      {keyStats.map((item) => (
+        <p key={item.name}>{item.name}: {item.value}</p>
+      ))}
+    </div>
   );
 
   return (

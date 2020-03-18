@@ -26,6 +26,7 @@ module.exports = {
     },
   },
   rules: {
+    'radix': 0,
     'max-len': 0,
     'template-curly-spacing' : 0,
     'indent' : 0,

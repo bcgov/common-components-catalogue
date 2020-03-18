@@ -6,12 +6,12 @@ import Page from '@/layouts/Page';
 import PlaceholderImage from '@/assets/lightspeed-short.jpg';
 
 const heroStyle = {
-  backgroundImage: `url(${PlaceholderImage})`
-}
+  backgroundImage: `url(${PlaceholderImage})`,
+};
 
 const Intro = () => (
   <Page>
-    <div className="intro__hero mb-5" style={heroStyle}></div>
+    <div className="intro__hero mb-5" style={heroStyle} />
     <div>
       <h2>Purpose</h2>
       <p>

@@ -44,8 +44,7 @@ const ListItem = ({ component }) => {
             <strong>Repo Link:</strong>
           </Col>
           <Col sm={9} lg={10}>
-            <a href={component.gitHubLink} title="Repository Link"
-              target="_blank" >{component.gitHubLink}
+            <a href={component.gitHubLink} title="Repository Link" target="_blank" >{component.gitHubLink}
             </a>
           </Col>
         </Row>

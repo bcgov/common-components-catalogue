@@ -6,8 +6,13 @@ import Badge from 'react-bootstrap/Badge';
 import { useHistory } from 'react-router-dom';
 
 import getTag from '@/service/get-tag';
+import { Routes } from '@/constants'
 
 const ListItem = ({component}) => {
+
+  const history = useHistory();
+
+  const handleCardClick = () => history.push(Routes.DetailView.dynamicRoute(component.id));
   
   const keyStats = component.keyStats.map((stat) => (
     <Col sm={4} key={stat.id} >{stat.name}: {stat.value}</Col>
@@ -18,7 +23,7 @@ const ListItem = ({component}) => {
   ));
 
   return (
-    <Card className="mb-3 shadow-sm" >
+    <Card onClick={handleCardClick} className="mb-3 shadow-sm stretched-link" >
     <Card.Header as="h5">
       {component.name}
     {/* <div className="float-right">

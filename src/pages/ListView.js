@@ -14,9 +14,9 @@ const ListItems = Components.map( ( component ) => (
 const ListView = () => (
   <Page>
     <h1 className="mb-5">List of Common Components</h1>
-    <div>
+    <React.Fragment>
       {ListItems}
-    </div>
+    </React.Fragment>
   </Page>
 );
 

@@ -33,7 +33,7 @@ const getPlugins = (isDevelopment) => [
   new CleanWebpackPlugin(),
   new HtmlWebpackPlugin({
     title: 'Common Components Catalogue',
-    template: './src/index.html',
+    template: path.join(__dirname, 'public', 'index.html'),
   }),
   new webpack.EnvironmentPlugin({ API_URL: 'http://localhost:5000/api' }),
   new MiniCssExtractPlugin({
@@ -53,7 +53,7 @@ const config = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: './',
+    publicPath: '/',
     filename: 'bundle.js',
   },
 };

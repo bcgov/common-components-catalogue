@@ -29,20 +29,12 @@ const ListItem = ({ component }) => {
         {component.name}
       </Card.Header>
       <Card.Body>
-
-        <ListGroup horizontal className="mb-2">
+        <ListGroup horizontal className="mb-3">
           <ListGroup.Item><strong>Key Stats</strong></ListGroup.Item>
           {renderKeyStats}
         </ListGroup>
         <hr />
-        <Row className="mb-2">
-          <Col sm={3} lg={2}>
-            <strong>Short Description:</strong>
-          </Col>
-          <Col sm={9} lg={10}>
-            {component.shortDescription}
-          </Col>
-        </Row>
+        <p>{component.shortDescription}</p>
         <Row className="mb-2">
           <Col sm={3} lg={2}>
             <strong>Repo Link:</strong>

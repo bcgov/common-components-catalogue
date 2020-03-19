@@ -22,7 +22,7 @@ jobs:
         uses: bcgov/openshift-launchpad-deployment@master
         with:
           MODE: client
-          BRANCH: ${{ github.event.pull_request.head.ref }}
+          BRANCH: "${{ github.event.pull_request.head.ref }}"
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN_TEST }}
           NAMESPACE: apdwlc-test
           APP_NAME: catalogue-pr${{ github.event.number }}

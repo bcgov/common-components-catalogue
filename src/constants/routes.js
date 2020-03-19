@@ -1,8 +1,8 @@
 export default Object.freeze({
   Intro: '/',
-  ListView: '/list-view',
+  ListView: '/catalogue',
   DetailView: {
-    staticRoute: '/detail-view/:id',
-    dynamicRoute: (id) => `/detail-view/${id}`,
+    staticRoute: '/common-component/:id',
+    dynamicRoute: (id) => `/common-component/${id}`,
   },
 });

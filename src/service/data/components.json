@@ -48,5 +48,53 @@
         "hoursSaved": "2"
       }
     ]
+  },
+  {
+    "id": 112,
+    "name": "openshift-launchpad-deployment",
+    "abbreviation": "OSACTION",
+    "shortDescription": "A bare bones starter kit that anyone can understand and use to build a 3-tier app and deploy to OpenShift",
+    "longDescription": "This component was created to meet the perceived demand for something that would improve the initial experience of new teams working in the BCDevExchange environment and on OpenShift in particular. The amount of work that a new (unfamiliar) team needs to do to get something simple running is consistently about 3 weeks. Using this product as a boilerplate, they can have 'hello world' running and deployed in OpenShift much faster and then begin creating code that provides business value sooner.",
+    "gitHubLink": "https://github.com/bcgov/openshift-launchpad-deployment",
+    "supportAgreement": null,
+    "sampleImplementationLink": null,
+    "ownerId": 333,
+    "tags": [
+      4
+    ],
+    "keyStats": [
+      {
+        "id": 22,
+        "name": "repositoryNumStars",
+        "value": "0"
+      },
+      {
+        "id": 23,
+        "name": "repositoryOpenIssues",
+        "value": "10"
+      },
+      {
+        "id": 24,
+        "name": "license",
+        "value": "Apache 2.0"
+      }
+    ],
+    "testimonials": [
+      {
+        "teamId": 334,
+        "quotation": "Wow, this thing was the greatest thing ever.",
+        "hoursSaved": "3"
+      },
+      {
+        "teamId": 334,
+        "quotation": "Wow, this thing was the best thing ever.",
+        "hoursSaved": "5"
+      },
+      {
+        "teamId": 334,
+        "quotation": "Wow, this component changed my life.",
+        "hoursSaved": "2"
+      }
+    ]
   }
 ]

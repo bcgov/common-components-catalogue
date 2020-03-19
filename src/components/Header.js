@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
 
-import logo from '@/assets/logo.svg';
+import logo from '@/assets/images/logo.svg';
 import { Routes } from '@/constants';
 
 const Header = () => (

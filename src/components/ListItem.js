@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom';
 import getTag from '@/service/get-tag';
 import { Routes } from '@/constants';
 
-const ListItem = ({component}) => {
+const ListItem = ({ component }) => {
   const history = useHistory();
 
   const renderKeyStats = component.keyStats.map((stat) => (

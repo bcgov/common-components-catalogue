@@ -29,7 +29,7 @@ module.exports = {
     'radix': 0,
     'max-len': 0,
     'template-curly-spacing' : 0,
-    'indent' : 0,
+    'indent': ['error', 2, { ignoredNodes: ['TemplateLiteral'] }],
     'react/prop-types': 0,
     'react/display-name': 0,
     'import/prefer-default-export': 0,

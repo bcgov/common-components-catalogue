@@ -1,5 +1,5 @@
-import Tags from '@/service/data/tags.json';
+import tagsJson from '@/service/data/tags.json';
 
-const getTag = (id) => Tags.find((tag) => tag.id === id);
+const getTag = (id) => tagsJson.find((tag) => tag.id === id);
 
 export default getTag;

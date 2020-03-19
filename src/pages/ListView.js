@@ -1,11 +1,12 @@
 import React from 'react';
 
+import componentsJson from '@/service/data/components.json';
+
 import Page from '@/layouts/Page';
 import ListItem from '@/components/ListItem';
-import Components from '@/service/data/components.json';
 
 // Storing list objects
-const ListItems = Components.map((component) => (
+const ListItems = componentsJson.map((component) => (
   <ListItem component={component} key={component.id} />
 ));
 
@@ -13,7 +14,9 @@ const ListItems = Components.map((component) => (
 const ListView = () => (
   <Page>
     <h1 className="mb-5">List of Common Components</h1>
-    {ListItems}
+    <div>
+      {ListItems}
+    </div>
   </Page>
 );
 

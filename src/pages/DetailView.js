@@ -6,16 +6,17 @@ import Image from 'react-bootstrap/Image';
 import Badge from 'react-bootstrap/Badge';
 import { useParams } from 'react-router-dom';
 
-import Components from '@/service/data/components.json';
-import PlaceholderImage from '@/assets/placeholder.svg';
+import componentsJson from '@/service/data/components.json';
+import placeholderImage from '@/assets/placeholder.svg';
 import getTag from '@/service/get-tag';
+
 import Page from '@/layouts/Page';
 import PaneContainer from '@/layouts/PaneContainer';
 
 const DetailView = () => {
   const { id } = useParams();
 
-  const matchingCoCo = Components.find((item) => item.id === parseInt(id));
+  const matchingCoCo = componentsJson.find((item) => item.id === parseInt(id));
   const name = matchingCoCo.name || 'N/A';
   const abbreviation = matchingCoCo.abbreviation || 'N/A';
   const gitHubLink = matchingCoCo.gitHubLink || null;
@@ -48,7 +49,7 @@ const DetailView = () => {
     <Container fluid>
       <Row>
         <Col xs="auto">
-          <Image src={PlaceholderImage} rounded />
+          <Image src={placeholderImage} rounded />
         </Col>
         <Col>
           <h1>{name} ({abbreviation})</h1>

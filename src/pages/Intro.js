@@ -2,11 +2,12 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import placeholderImage from '@/assets/lightspeed-short.jpg';
+
 import Page from '@/layouts/Page';
-import PlaceholderImage from '@/assets/lightspeed-short.jpg';
 
 const heroStyle = {
-  backgroundImage: `url(${PlaceholderImage})`,
+  backgroundImage: `url(${placeholderImage})`,
 };
 
 const Intro = () => (

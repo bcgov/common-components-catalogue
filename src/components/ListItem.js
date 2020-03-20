@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import getTag from '@/service/get-tag';
 import { Routes } from '@/constants';
@@ -26,7 +26,7 @@ const ListItem = ({ component }) => {
   return (
     <Card className="mb-4 shadow-sm">
       <Card.Header as="h5">
-        <link to={Routes.DetailView.dynamicRoute(component.id)} >{component.name}</link>
+        <Link to={Routes.DetailView.dynamicRoute(component.id)} >{component.name}</Link>
       </Card.Header>
       <Card.Body>
         <ListGroup horizontal="md" className="mb-3">

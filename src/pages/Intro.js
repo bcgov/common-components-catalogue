@@ -2,7 +2,7 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import placeholderImage from '@/assets/lightspeed-short.jpg';
+import placeholderImage from '@/assets/images/lightspeed-short.jpg';
 
 import Page from '@/layouts/Page';
 

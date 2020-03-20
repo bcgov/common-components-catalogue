@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
 
-import logo from '@/assets/logo.svg';
+import logo from '@/assets/images/logo.svg';
 import { Routes } from '@/constants';
 
 const Header = () => (
@@ -13,10 +13,10 @@ const Header = () => (
         <Nav.Link className="header__nav-item header__logo" as={Link} to={Routes.Intro}><img src={logo} alt="Logo" /></Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="header__nav-item" as={Link} to={Routes.Intro}>Common Components Catalogue</Nav.Link>
+        <Nav.Link className="header__nav-item" as={Link} to={Routes.Intro}>Home</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="header__nav-item" as={Link} to={Routes.ListView}>Components</Nav.Link>
+        <Nav.Link className="header__nav-item" as={Link} to={Routes.ListView}>Catalogue</Nav.Link>
       </Nav.Item>
     </Nav>
   </Container>

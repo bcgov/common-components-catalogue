@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
+import ListGroup from 'react-bootstrap/ListGroup';
 import { useHistory } from 'react-router-dom';
 
 import getTag from '@/service/get-tag';
@@ -13,7 +14,7 @@ const ListItem = ({ component }) => {
   const history = useHistory();
 
   const renderKeyStats = component.keyStats.map((stat) => (
-    <Col sm={4} key={stat.id}>{stat.name}: {stat.value}</Col>
+    <ListGroup.Item key={stat.id}>{stat.name}: {stat.value}</ListGroup.Item>
   ));
 
   const renderTags = component.tags.map((tagId) => (
@@ -23,24 +24,17 @@ const ListItem = ({ component }) => {
   const handleClick = () => history.push(Routes.DetailView.dynamicRoute(component.id));
 
   return (
-    <Card className="mb-3 shadow-sm">
+    <Card className="mb-4 shadow-sm">
       <Card.Header as="h5">
         {component.name}
       </Card.Header>
       <Card.Body>
-        <strong>Key Stats</strong>
-        <Row className="mb-2">
+        <ListGroup horizontal="md" className="mb-3">
+          <ListGroup.Item><strong>Key Stats</strong></ListGroup.Item>
           {renderKeyStats}
-        </Row>
+        </ListGroup>
         <hr />
-        <Row className="mb-2">
-          <Col sm={3} lg={2}>
-            <strong>Short Description:</strong>
-          </Col>
-          <Col sm={9} lg={10}>
-            {component.shortDescription}
-          </Col>
-        </Row>
+        <p>{component.shortDescription}</p>
         <Row className="mb-2">
           <Col sm={3} lg={2}>
             <strong>Repo Link:</strong>
@@ -57,14 +51,20 @@ const ListItem = ({ component }) => {
           </Col>
         </Row>
         <hr />
-        {renderTags}
-        <Button
-          className="float-right"
-          variant="primary"
-          onClick={handleClick}
-        >
-          View
-        </Button>
+        <Row>
+          <Col md={8}>
+            {renderTags}
+          </Col>
+          <Col md={4} className="text-center pt-3 pt-md-0">
+            <Button
+            className="float-md-right d-block d-md-inline-block mx-auto"
+            variant="primary"
+            onClick={handleClick}
+          >
+            View Details
+          </Button>
+          </Col>
+        </Row>
       </Card.Body>
     </Card>
   );

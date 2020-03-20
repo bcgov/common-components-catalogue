@@ -7,7 +7,7 @@ const Page = ({ children }) => (
   <React.Fragment>
     <Header/>
     <Container>
-      <div className="page__content text-left my-2">
+      <div className="text-left my-4">
         {children}
       </div>
     </Container>

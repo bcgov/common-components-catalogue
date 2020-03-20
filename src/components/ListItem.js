@@ -29,7 +29,7 @@ const ListItem = ({ component }) => {
         {component.name}
       </Card.Header>
       <Card.Body>
-        <ListGroup horizontal className="mb-3">
+        <ListGroup horizontal="md" className="mb-3">
           <ListGroup.Item><strong>Key Stats</strong></ListGroup.Item>
           {renderKeyStats}
         </ListGroup>
@@ -51,14 +51,20 @@ const ListItem = ({ component }) => {
           </Col>
         </Row>
         <hr />
-        {renderTags}
-        <Button
-          className="float-right"
-          variant="primary"
-          onClick={handleClick}
-        >
-          View Details
-        </Button>
+        <Row>
+          <Col md={8}>
+            {renderTags}
+          </Col>
+          <Col md={4} className="text-center pt-3 pt-md-0">
+            <Button
+            className="float-md-right d-block d-md-inline-block mx-auto"
+            variant="primary"
+            onClick={handleClick}
+          >
+            View Details
+          </Button>
+          </Col>
+        </Row>
       </Card.Body>
     </Card>
   );

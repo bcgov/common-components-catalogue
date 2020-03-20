@@ -48,8 +48,8 @@ const DetailView = () => {
   const renderMainContent = (
     <section>
       <Row>
-        <Col xs="auto">
-          <Image src={placeholderImage} rounded />
+        <Col md="auto">
+          <Image src={placeholderImage} rounded fluid />
         </Col>
         <Col>
           <h1 className="h2">{name} ({abbreviation})</h1>

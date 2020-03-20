@@ -26,7 +26,7 @@ const ListItem = ({ component }) => {
   return (
     <Card className="mb-4 shadow-sm">
       <Card.Header as="h5">
-        {component.name}
+        <link to={Routes.DetailView.dynamicRoute(component.id)} >{component.name}</link>
       </Card.Header>
       <Card.Body>
         <ListGroup horizontal="md" className="mb-3">

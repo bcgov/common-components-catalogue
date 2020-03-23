@@ -35,7 +35,7 @@ const DetailView = () => {
   ));
 
   const renderTestimonials = testimonials.map((item, index) => (
-    <Col key={index} xs>
+    <Col key={index} lg={4} >
       <blockquote>&quot;{item.quotation}&quot;</blockquote>
       <p>Hours saved: {item.hoursSaved}</p>
     </Col>

@@ -1,23 +1,63 @@
 .header {
   $padding: ($header-height - $logo-height) / 2;
-  background-color: theme-color('primary');
+
   padding-top: $padding;
   padding-bottom: $padding;
+  background-color: theme-color('primary');
   border-bottom: 2px solid theme-color('secondary');
 
   &__logo {
-    img {
-      width: $logo-height * (165 / 41); // Maintain aspect ratio
-      height: $logo-height;
-    }
+    height: $logo-height;
   }
 
   &__nav-item {
-    line-height: $logo-height;
-    color: white;
+    color: white !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+
+    &--button {
+      padding-right: 1rem !important;
+      padding-left: 1rem !important;
+      &:hover {
+        background-color: theme-color('primary') !important;
+        border-color: theme-color('secondary') !important;
+      }
+    }
+
+    &--selected {
+      color: theme-color('secondary') !important;
+      text-decoration: underline;
+    }
+
+    &:last-child {
+      margin-right: 0 !important;
+    }
 
     &:hover {
-      color: theme-color('secondary');
+      color: theme-color('secondary') !important;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__logo {
+      height: $logo-height - 10px;
+    }
+
+    &__nav-item {
+      margin: 1rem 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+
+      &--button {
+        width: fit-content;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+      }
     }
   }
 }

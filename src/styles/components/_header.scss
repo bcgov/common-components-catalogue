@@ -12,27 +12,26 @@
 
   &__nav-item {
     color: white !important;
+    margin: 1rem;
     padding-right: 0 !important;
     padding-left: 0 !important;
-    margin-left: 1rem !important;
-    margin-right: 1rem !important;
-
-    &--button {
-      padding-right: 1rem !important;
-      padding-left: 1rem !important;
-      &:hover {
-        background-color: theme-color('primary') !important;
-        border-color: theme-color('secondary') !important;
-      }
-    }
 
     &--selected {
       color: theme-color('secondary') !important;
       text-decoration: underline;
     }
 
+    &--button {
+      padding: 0.5rem 1rem !important;
+
+      &:hover {
+        background-color: theme-color('primary');
+        border-color: theme-color('secondary');
+      }
+    }
+
     &:last-child {
-      margin-right: 0 !important;
+      margin-right: 0;
     }
 
     &:hover {
@@ -42,21 +41,18 @@
   }
 }
 
-@media (max-width: 768px) {
+@include media-breakpoint-down(sm) {
   .header {
     &__logo {
       height: $logo-height - 10px;
     }
 
     &__nav-item {
-      margin: 1rem 0 !important;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
+      margin: 1rem 0;
+      padding: 0;
 
       &--button {
         width: fit-content;
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
       }
     }
   }

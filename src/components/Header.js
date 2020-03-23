@@ -14,14 +14,17 @@ const Header = () => {
   return (
     <Navbar className="header" collapseOnSelect expand="md" variant="dark">
       <Container>
-        <Navbar.Brand as={Link} to={Routes.Intro}>
+        <Navbar.Brand
+          as={Link}
+          to={Routes.Intro}
+        >
           <img
             className="header__logo"
             src={logo}
             alt="Logo"
           />
         </Navbar.Brand>
-        <Navbar.Toggle className="header__hamburger" />
+        <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="ml-auto">
             <Nav.Link
@@ -51,6 +54,6 @@ const Header = () => {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default Header;

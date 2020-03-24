@@ -12,5 +12,19 @@
     "contactEmail": "newthingteamlead@gov.bc.ca",
     "location": "3456 Jutland",
     "organizationalUnit": "Ministry of Making New Stuff, IM/IT Division"
+  },
+  {
+    "id": 335,
+    "teamName": "DataBC",
+    "contactEmail": "newthingteamlead@gov.bc.ca",
+    "location": "3456 Jutland",
+    "organizationalUnit": "Ministry of Making New Stuff, IM/IT Division"
+  },
+  {
+    "id": 336,
+    "teamName": "DevOps Platform",
+    "contactEmail": "newthingteamlead@gov.bc.ca",
+    "location": "3456 Jutland",
+    "organizationalUnit": "Ministry of Making New Stuff, IM/IT Division"
   }
 ]

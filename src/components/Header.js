@@ -41,14 +41,6 @@ const Header = () => {
             >
               Catalogue
             </Nav.Link>
-            <Nav.Link
-              className="header__nav-item header__nav-item--button"
-              variant="outline-light"
-              as={Button}
-              onClick={() => {}}
-            >
-              Sign Out
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

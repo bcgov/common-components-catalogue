@@ -67,7 +67,7 @@ const DetailView = () => {
             <a href={sampleImplementationLink} rel="noopener noreferrer" target="_blank">{sampleImplementationLink || 'N/A'}</a>
           </div>
           <div className="my-1">
-          {renderTags}
+            {renderTags}
           </div>
         </Col>
       </Row>

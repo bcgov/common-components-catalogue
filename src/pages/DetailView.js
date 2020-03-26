@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import Container from 'react-bootstrap/Container';
+import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
@@ -68,7 +67,7 @@ const DetailView = () => {
             <a href={sampleImplementationLink} rel="noopener noreferrer" target="_blank">{sampleImplementationLink || 'N/A'}</a>
           </div>
           <div className="my-1">
-          {renderTags}
+            {renderTags}
           </div>
         </Col>
       </Row>

@@ -6,8 +6,7 @@ import Page from '@/layouts/Page';
 const NotFound = () => (
   <Page>
     <h1>Not found.</h1>
-    <p>The page you're looking for doesn't exist. <Link to="/">Go to Home</Link></p>
-    
+    <p>The page you&apos;re looking for doesn&apos;t exist. <Link to="/">Go to Home</Link></p>
   </Page>
 );
 

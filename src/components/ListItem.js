@@ -57,12 +57,12 @@ const ListItem = ({ component }) => {
           </Col>
           <Col md={4} className="text-center pt-3 pt-md-0">
             <Button
-            className="float-md-right d-block d-md-inline-block mx-auto"
-            variant="primary"
-            onClick={handleClick}
-          >
-            View Details
-          </Button>
+              className="float-md-right d-block d-md-inline-block mx-auto"
+              variant="primary"
+              onClick={handleClick}
+            >
+              View Details
+            </Button>
           </Col>
         </Row>
       </Card.Body>

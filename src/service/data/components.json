@@ -100,10 +100,9 @@
   {
     "id": 113,
     "name": "BC Address Geocoder",
-    "abbreviation": "",
     "shortDescription": "Resolve the physical locations and correct, standardized form of civic and non-civic addresses in British Columbia.",
-    "longDescription": "The BC Address Geocoder is a REST web service that can be used to resolve the physical locations (i.e., latitude and longitude) and correct, standardized form of civic and non-civic addresses in British Columbia.",
-    "supportAgreement": "Available Monday through Friday (except Holidays) from 8:30am to 4:30pm (PST) by calling the Service Desk at 1-866-952-6801 or emailing the service desk at NRS.ServiceDesk@gov.bc.ca.",
+    "longDescription": "The BC Gov OpenShift Container Platform Service is a multi-tenant container platform that government application development teams may use to develop and deploy modern, cloud native software applications. The service provides development teams with a set of isolated project spaces (namespaces) with associated resource quotas in which they can develop and deploy their applications and tools supporting their development lifecycle - from day-to-day development through to production.  \n #### Features & Functions \nThe core of the service is an instance of Red Hat's OpenShift Container Platform (OCP) running in the government data centre in Kamloops. Details of the configuration of the BC Gov OCP instance are as follows: \n - multi-tenant deployment, with RBAC and software defined network providing isolation between teams' environments \n - highly-available OCP deployment with ability to perform maintenance with no/minimal impact to applications running on it \n - 2 factor authentication and authorization provided via GitHub OAuth integration \n - standard set of project spaces provided to teams is tools (for development lifecycle support tools such as CI, automated testing, and code quality tools), dev, test, and prod\n - each corresponding to a deployment stage. \n - dynamically provisioned persistent storage backed by containerized Gluster (aka CNS and OCS) and/or dedicated NetApp storage \n - resource quotas associated with each project space; these quotas have been set at levels adequate to support the development activities and production deployment workloads for many typical government applications \n - a catalog of pre-defined technology stacks/tools to provide \"application quick starts\" or fully functional services to applications. \n\nRead more [here](https://github.com/bcgov/ols-geocoder/tree/gh-pages)",
+    "supportAgreement": "Available Monday through Friday (except Holidays) from 8:30am to 4:30pm (PST) by calling the Service Desk at 1-866-952-6801 or emailing the service desk at [NRS.ServiceDesk@gov.bc.ca](mailto:NRS.ServiceDesk@gov.bc.ca).",
     "sampleImplementationLink": "https://ols-demo.apps.gov.bc.ca/index.html",
     "gitHubLink": "https://github.com/bcgov/ols-geocoder/tree/gh-pages",
     "ownerId": 334,
@@ -148,7 +147,6 @@
   {
     "id": 114,
     "name": "BC Route Planner",
-    "abbreviation": "",
     "shortDescription": "Find the best vehicle route between two points in B.C.",
     "longDescription": "The B.C. Route Planner is a REST web service that offers vehicle route plans that are based on the B.C. Digital Road Atlas. The B.C. Route Planner computes the shortest or fastest route between start and end points and returns the route, distance, time, and directions.",
     "supportAgreement": "Contact the developer: https://forms.gov.bc.ca/databc-contact-us/",
@@ -196,7 +194,6 @@
   {
     "id": 115,
     "name": "Common Hosted Email Service",
-    "abbreviation": "",
     "shortDescription": "Use structured datasets and business templates to automatically populate printable documents, spreadsheets, presentations, or PDFs.",
     "supportAgreement": "Contact the developer: https://forms.gov.bc.ca/databc-contact-us/",
     "gitHubLink": "https://github.com/bcgov/common-hosted-email-service",
@@ -243,10 +240,9 @@
   {
     "id": 116,
     "name": "BC Government on-premise PaaS",
-    "abbreviation": "",
     "shortDescription": "Build and deploy modern, cloud-native applications using BC's on-premise DevOps platform.",
-    "longDescription": "The BC Gov OpenShift Container Platform Service is a multi-tenant container platform that government application development teams may use to develop and deploy modern, cloud native software applications. The service provides development teams with a set of isolated project spaces (namespaces) with associated resource quotas in which they can develop and deploy their applications and tools supporting their development lifecycle - from day-to-day development through to production",
-    "supportAgreement": "Submit support requests via the BC Government Help Desk by telephoning 250 387-7000 or emailing 77000@gov.bc.ca.",
+    "longDescription": "The BC Gov OpenShift Container Platform Service is a multi-tenant container platform that government application development teams may use to develop and deploy modern, cloud native software applications. The service provides development teams with a set of isolated project spaces (namespaces) with associated resource quotas in which they can develop and deploy their applications and tools supporting their development lifecycle\n - from day-to-day development through to production",
+    "supportAgreement": "Submit support requests via the BC Government Help Desk by telephoning 250 387-7000 or emailing [77000@gov.bc.ca](mailto:77000@gov.bc.ca).",
     "sampleImplementationLink": "https://developer.gov.bc.ca/Getting-Started-on-the-DevOps-Platform/BC-Government-OpenShift-Container-Platform-Service-Definition",
     "ownerId": 336,
     "tags": [

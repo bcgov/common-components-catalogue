@@ -23,8 +23,8 @@ jobs:
         with:
           MODE: client
           BRANCH: ${{ github.event.pull_request.head.ref }}
-          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN_TEST }}
-          NAMESPACE: apdwlc-test
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN_DEV }}
+          NAMESPACE: apdwlc-dev
           APP_NAME: catalogue-pr${{ github.event.number }}
           API_URL: https://test.com
           CLIENT_PORT: 3000

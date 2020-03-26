@@ -6,6 +6,7 @@ import Image from 'react-bootstrap/Image';
 import Badge from 'react-bootstrap/Badge';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useParams } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 
 import componentsJson from '@/service/data/components.json';
 import placeholderImage from '@/assets/images/placeholder.svg';
@@ -14,12 +15,13 @@ import getTag from '@/service/get-tag';
 import Page from '@/layouts/Page';
 import PaneContainer from '@/layouts/PaneContainer';
 
+
 const DetailView = () => {
   const { id } = useParams();
 
   const matchingCoCo = componentsJson.find((item) => item.id === parseInt(id));
   const name = matchingCoCo.name || 'N/A';
-  const abbreviation = matchingCoCo.abbreviation || 'N/A';
+
   const gitHubLink = matchingCoCo.gitHubLink || null;
   const supportAgreement = matchingCoCo.supportAgreement || null;
   const sampleImplementationLink = matchingCoCo.sampleImplementationLink || null;
@@ -52,20 +54,22 @@ const DetailView = () => {
           <Image src={placeholderImage} rounded fluid />
         </Col>
         <Col>
-          <h1 className="h2">{name} ({abbreviation})</h1>
+          <h1 className="h2">{name}</h1>
           <p>
             <strong>GitHub Link: </strong>
             <a href={gitHubLink} rel="noopener noreferrer" target="_blank">{gitHubLink}</a>
           </p>
-          <p>
+          <div>
             <strong>Support Agreement: </strong>
-            <a href={supportAgreement} rel="noopener noreferrer" target="_blank">{supportAgreement || 'N/A'}</a>
-          </p>
-          <p>
+            {<ReactMarkdown source={supportAgreement} />}
+          </div>
+          <div>
             <strong>Sample Implementation Link: </strong>
             <a href={sampleImplementationLink} rel="noopener noreferrer" target="_blank">{sampleImplementationLink || 'N/A'}</a>
-          </p>
+          </div>
+          <div className="my-1">
           {renderTags}
+          </div>
         </Col>
       </Row>
       <hr />
@@ -74,7 +78,7 @@ const DetailView = () => {
           <h2>Description</h2>
         </Col>
         <Col xs={12}>
-          <p>{longDescription}</p>
+          {<ReactMarkdown source={longDescription} />}
         </Col>
       </Row>
       <hr />

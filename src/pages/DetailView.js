@@ -11,6 +11,7 @@ import componentsJson from '@/service/data/components.json';
 import placeholderImage from '@/assets/images/placeholder.svg';
 import getTag from '@/service/get-tag';
 
+import CoCoLinkAttribute from '@/components/CoCoLinkAttribute';
 import Page from '@/layouts/Page';
 import PaneContainer from '@/layouts/PaneContainer';
 
@@ -54,18 +55,12 @@ const DetailView = () => {
         </Col>
         <Col>
           <h1 className="h2">{name}</h1>
-          <p>
-            <strong>GitHub Link: </strong>
-            <a href={gitHubLink} rel="noopener noreferrer" target="_blank">{gitHubLink}</a>
-          </p>
+          <CoCoLinkAttribute link={gitHubLink} label="GitHub Link" />
           <div>
             <strong>Support Agreement: </strong>
             {<ReactMarkdown source={supportAgreement} />}
           </div>
-          <div>
-            <strong>Sample Implementation Link: </strong>
-            <a href={sampleImplementationLink} rel="noopener noreferrer" target="_blank">{sampleImplementationLink || 'N/A'}</a>
-          </div>
+          <CoCoLinkAttribute link={sampleImplementationLink} label="Sample Implementation Link" />
           <div className="my-1">
             {renderTags}
           </div>

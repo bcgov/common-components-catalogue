@@ -13,7 +13,7 @@ const ListItems = componentsJson.map((component) => (
 // ListView Page
 const ListView = () => (
   <Page>
-    <h1 className="mb-5">List of Common Components</h1>
+    <h1 className="h2 mb-5">List of Common Components</h1>
     <div>
       {ListItems}
     </div>

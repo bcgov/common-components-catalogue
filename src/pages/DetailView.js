@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Badge from 'react-bootstrap/Badge';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
 import componentsJson from '@/service/data/components.json';
@@ -14,6 +14,7 @@ import getTag from '@/service/get-tag';
 import CoCoLinkAttribute from '@/components/CoCoLinkAttribute';
 import Page from '@/layouts/Page';
 import PaneContainer from '@/layouts/PaneContainer';
+import { Routes } from '@/constants';
 
 
 const DetailView = () => {
@@ -31,8 +32,8 @@ const DetailView = () => {
   const testimonials = matchingCoCo.testimonials || [];
 
   const renderTags = tags.map((tagId) => (
-    <Badge key={tagId} className="ml-1 mr-1" variant="dark">
-      {getTag(tagId).value}
+    <Badge pill={true} variant="dark" key={tagId} className="mr-1">
+      <Link className="p-1 d-block text-white" to={Routes.TagView.dynamicRoute(tagId)} >{getTag(tagId).value}</Link>
     </Badge>
   ));
 

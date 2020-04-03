@@ -5,4 +5,8 @@ export default Object.freeze({
     staticRoute: '/common-component/:id',
     dynamicRoute: (id) => `/common-component/${id}`,
   },
+  TagView: {
+    staticRoute: '/tag/:id',
+    dynamicRoute: (id) => `/tag/${id}`,
+  },
 });

@@ -19,7 +19,9 @@ const ListItem = ({ component }) => {
   ));
 
   const renderTags = component.tags.map((tagId) => (
-    <Badge pill={true} variant="dark" key={tagId} className="mr-1">{getTag(tagId).value}</Badge>
+    <Badge pill={true} variant="dark" key={tagId} className="mr-1">
+      <Link className="p-1 d-block text-white" to={Routes.TagView.dynamicRoute(tagId)} >{getTag(tagId).value}</Link>
+    </Badge>
   ));
 
   const handleClick = () => history.push(Routes.DetailView.dynamicRoute(component.id));
